@@ -29,7 +29,7 @@ This repository contains the contributions in Tidituesday
 +--------------------------------+---------------+---------------+
 | Theme                          | Date          | Code          |
 +================================+===============+===============+
-| CRAN                           |`2019-11-12`   |<a href="https://duvancho321.github.io/Tidytuesdays/Folder/12-11-19" target="_blank">File</a>    |
+| CRAN                           |`2019-11-12`   |<a href="https://duvancho321.github.io/Tidyuesday/Folder/12-11-19" target="_blank">File</a>    |
 +--------------------------------+---------------+---------------+
 |                                |               |               |
 +--------------------------------+---------------+---------------+
