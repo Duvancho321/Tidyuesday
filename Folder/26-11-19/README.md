@@ -35,12 +35,11 @@ as.data.frame(lapply(tt_dat, function(x) sum(is.na(x)))) %>%
 #>  3 quarter                        0
 #>  4 starting                       9
 #>  5 added                        160
-#>  6 consolidation                  0
-#>  7 rehabilitation                 0
-#>  8 voluntary_payments            11
-#>  9 wage_garnishments              0
-#> 10 total                          0
-
+#>  6 total                          0
+#>  7 consolidation                  0
+#>  8 rehabilitation                11
+#>  9 voluntary_payments             0
+#> 10 wage_garnishments              0
 df <- tt_dat %>% 
   mutate(date1 = year+2000) %>% mutate(date2 = paste("Q",tt_dat$quarter,"/",tt_dat$year,sep="")) %>% 
   mutate(date2 = as.Date(as.yearqtr(date2,format="Q%q/%y"))) %>% 
@@ -53,19 +52,76 @@ data_top10 <- df %>%
   group_by(agency_name) %>% 
   summarise(total_y = sum(total)) %>% 
   top_n(10)
-
 top10 <- c(data_top10$agency_name) 
+```
+
+# all
+
+``` r
+dp <- df %>%
+  ungroup() %>%
+  group_by(date1,agency_name) %>% 
+  summarise(total_y = sum(total)) %>% 
+  mutate(total_r = total_y/10000000) %>% 
+  filter(agency_name %in% top10 )
+
+ggplot(dp, aes(fill = agency_name, values = total_r)) +
+  geom_waffle(color = "grey10", size = .25, n_rows = 10, flip = T) +
+  facet_wrap(~date1, nrow = 1, strip.position = "bottom") +
+  scale_x_discrete() + 
+  scale_y_continuous(labels = function(x) x *100,
+                     expand = c(0,0)) +
+  scale_fill_tableau( ) +
+  coord_equal() +
+  labs(
+    title = "Total Repaid",
+    subtitle = "Top 10 agency",
+    x = "Year",
+    y = "Dollars (millions)",
+    fill = "Agency",
+    caption = "Vizualization by @DuvanNievesRui1 | Data: 'Student Loan Debt'  by Department of Education") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(panel.grid = element_blank(), 
+        axis.ticks.y = element_line(),
+        legend.position = c(.2,.86),
+        panel.background = element_rect(fill="grey10",color = "grey10"),
+        plot.background = element_rect(fill="grey10"),
+        panel.spacing = unit(2, "lines"),
+        plot.title = element_text(size=40, color="grey76"),
+        plot.subtitle  = element_text(size=26, color="grey76"),
+        plot.caption = element_text(size = 14,color = "grey76", hjust = .98),
+        axis.text = element_text(family = "Roboto Mono",
+                                 size = 20,
+                                 colour = "grey76"), 
+        strip.text.x =element_text(family = "Roboto Mono",
+                                   size = 14,
+                                   colour = "grey76"), 
+        axis.title =  element_text(family = "Roboto Mono",
+                                   size = 30,
+                                   colour = "white"),
+        legend.text = element_text(family = "Roboto Mono",
+                                   size = 12,
+                                   colour = "grey76"),
+        legend.title = element_text(family = "Roboto Mono",
+                                   size = 16,
+                                   colour = "grey76")) +
+  guides(fill = guide_legend(reverse = T)) 
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+
+# \>2015
+
+``` r
 
 dp <- df %>%
   ungroup() %>%
   filter(date1 > 2015) %>% 
   group_by(date1,agency_name) %>% 
   summarise(total_y = sum(total)) %>% 
-  mutate(total_r = total_y/1000000) %>% 
+  mutate(total_r = total_y/10000000) %>% 
   filter(agency_name %in% top10 )
-```
 
-``` r
   ggplot(dp, aes(fill = agency_name, values = total_r)) +
   geom_waffle(color = "grey10", size = .25, n_rows = 10, flip = T) +
   facet_wrap(~date1, nrow = 1, strip.position = "bottom") +
@@ -84,32 +140,32 @@ dp <- df %>%
   theme_minimal(base_family = "Roboto Condensed") +
   theme(panel.grid = element_blank(), 
         axis.ticks.y = element_line(),
-        legend.position = c(.84,.75),
+        legend.position = c(.83,.9),
         panel.background = element_rect(fill="grey10",color = "grey10"),
         plot.background = element_rect(fill="grey10"),
-        panel.spacing = unit(2.5, "lines"),
-        plot.title = element_text(size=20, color="grey76"),
-        plot.subtitle  = element_text(size=13, color="grey76"),
-        plot.caption = element_text(size = 9,color = "grey76", hjust = .98),
+        panel.spacing = unit(2, "lines"),
+        plot.title = element_text(size=40, color="grey76"),
+        plot.subtitle  = element_text(size=26, color="grey76"),
+        plot.caption = element_text(size = 14,color = "grey76", hjust = .98),
         axis.text = element_text(family = "Roboto Mono",
-                                 size = 10,
+                                 size = 20,
                                  colour = "grey76"), 
         strip.text.x =element_text(family = "Roboto Mono",
-                                   size = 12,
+                                   size = 14,
                                    colour = "grey76"), 
         axis.title =  element_text(family = "Roboto Mono",
-                                   size = 16,
+                                   size = 30,
                                    colour = "white"),
         legend.text = element_text(family = "Roboto Mono",
-                                   size = 9,
+                                   size = 12,
                                    colour = "grey76"),
         legend.title = element_text(family = "Roboto Mono",
-                                   size = 12,
+                                   size = 16,
                                    colour = "grey76")) +
   guides(fill = guide_legend(reverse = T)) 
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="README_files/figure-gfm/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
 
 ``` r
 dp <- df %>%
@@ -124,7 +180,7 @@ dp <- df %>%
   geom_waffle(color = "grey10", size = .25, n_rows = 10, flip = T) +
   facet_wrap(~date2, nrow = 1, strip.position = "bottom") +
   scale_x_discrete() + 
-  scale_y_continuous(labels = function(x) x *100,
+  scale_y_continuous(labels = function(x) x *10,
                      expand = c(0,0)) +
   scale_fill_tableau( ) +
   coord_equal() +
@@ -141,26 +197,27 @@ dp <- df %>%
         legend.position = "bottom",
         panel.background = element_rect(fill="grey10",color = "grey10"),
         plot.background = element_rect(fill="grey10"),
-        panel.spacing = unit(.1, "lines"),
-        plot.title = element_text(size=20, color="grey76"),
-        plot.subtitle  = element_text(size=13, color="grey76"),
-        plot.caption = element_text(size = 7.8,color = "grey76", hjust = .98),
+        panel.spacing = unit(.5, "lines"),
+        plot.title = element_text(size=40, color="grey76"),
+        plot.subtitle  = element_text(size=26, color="grey76"),
+        plot.caption = element_text(size = 14,color = "grey76", hjust = .98),
         axis.text = element_text(family = "Roboto Mono",
-                                 size = 12,
+                                 size = 20,
                                  colour = "grey76"), 
         strip.text.x =element_text(family = "Roboto Mono",
-                                   size = 12,
-                                   colour = "grey76"), 
+                                   size = 14,
+                                   colour = "grey76",
+                                   angle = -30), 
         axis.title =  element_text(family = "Roboto Mono",
-                                   size = 16,
+                                   size = 30,
                                    colour = "white"),
         legend.text = element_text(family = "Roboto Mono",
-                                   size = 9,
+                                   size = 12,
                                    colour = "grey76"),
         legend.title = element_text(family = "Roboto Mono",
-                                   size = 12,
+                                   size = 16,
                                    colour = "grey76")) +
   guides(fill = guide_legend(reverse = T)) 
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="README_files/figure-gfm/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
