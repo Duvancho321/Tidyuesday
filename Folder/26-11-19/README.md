@@ -58,6 +58,7 @@ top10 <- c(data_top10$agency_name)
 
 dp <- df %>%
   ungroup() %>%
+  filter(date1 > 2015) %>% 
   group_by(date1,agency_name) %>% 
   summarise(total_y = sum(total)) %>% 
   mutate(total_r = total_y/1000000) %>% 
@@ -69,7 +70,7 @@ dp <- df %>%
   geom_waffle(color = "grey10", size = .25, n_rows = 10, flip = T) +
   facet_wrap(~date1, nrow = 1, strip.position = "bottom") +
   scale_x_discrete() + 
-  scale_y_continuous(labels = function(x) x *10,
+  scale_y_continuous(labels = function(x) x *100,
                      expand = c(0,0)) +
   scale_fill_tableau( ) +
   coord_equal() +
@@ -83,13 +84,13 @@ dp <- df %>%
   theme_minimal(base_family = "Roboto Condensed") +
   theme(panel.grid = element_blank(), 
         axis.ticks.y = element_line(),
-        legend.position = c(.6,.6),
+        legend.position = c(.84,.75),
         panel.background = element_rect(fill="grey10",color = "grey10"),
         plot.background = element_rect(fill="grey10"),
-        panel.spacing = unit(1.5, "lines"),
+        panel.spacing = unit(2.5, "lines"),
         plot.title = element_text(size=20, color="grey76"),
         plot.subtitle  = element_text(size=13, color="grey76"),
-        plot.caption = element_text(size = 7.8,color = "grey76", hjust = .98),
+        plot.caption = element_text(size = 9,color = "grey76", hjust = .98),
         axis.text = element_text(family = "Roboto Mono",
                                  size = 10,
                                  colour = "grey76"), 
@@ -100,7 +101,7 @@ dp <- df %>%
                                    size = 16,
                                    colour = "white"),
         legend.text = element_text(family = "Roboto Mono",
-                                   size = 12,
+                                   size = 9,
                                    colour = "grey76"),
         legend.title = element_text(family = "Roboto Mono",
                                    size = 12,
@@ -109,3 +110,57 @@ dp <- df %>%
 ```
 
 <img src="README_files/figure-gfm/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+
+``` r
+dp <- df %>%
+  ungroup() %>%
+  filter(date1 > 2015) %>% 
+  group_by(date2,agency_name) %>% 
+  summarise(total_y = sum(total)) %>% 
+  mutate(total_r = total_y/1000000) %>% 
+  filter(agency_name %in% top10 )
+ 
+ ggplot(dp, aes(fill = agency_name, values = total_r)) +
+  geom_waffle(color = "grey10", size = .25, n_rows = 10, flip = T) +
+  facet_wrap(~date2, nrow = 1, strip.position = "bottom") +
+  scale_x_discrete() + 
+  scale_y_continuous(labels = function(x) x *100,
+                     expand = c(0,0)) +
+  scale_fill_tableau( ) +
+  coord_equal() +
+  labs(
+    title = "Total Repaid",
+    subtitle = "Top 10 agency",
+    x = "Date",
+    y = "Dollars (millions)",
+    fill = "Agency",
+    caption = "Vizualization by @DuvanNievesRui1 | Data: 'Student Loan Debt'  by Department of Education") +
+  theme_minimal(base_family = "Roboto Condensed") +
+  theme(panel.grid = element_blank(), 
+        axis.ticks.y = element_line(),
+        legend.position = "bottom",
+        panel.background = element_rect(fill="grey10",color = "grey10"),
+        plot.background = element_rect(fill="grey10"),
+        panel.spacing = unit(.1, "lines"),
+        plot.title = element_text(size=20, color="grey76"),
+        plot.subtitle  = element_text(size=13, color="grey76"),
+        plot.caption = element_text(size = 7.8,color = "grey76", hjust = .98),
+        axis.text = element_text(family = "Roboto Mono",
+                                 size = 12,
+                                 colour = "grey76"), 
+        strip.text.x =element_text(family = "Roboto Mono",
+                                   size = 12,
+                                   colour = "grey76"), 
+        axis.title =  element_text(family = "Roboto Mono",
+                                   size = 16,
+                                   colour = "white"),
+        legend.text = element_text(family = "Roboto Mono",
+                                   size = 9,
+                                   colour = "grey76"),
+        legend.title = element_text(family = "Roboto Mono",
+                                   size = 12,
+                                   colour = "grey76")) +
+  guides(fill = guide_legend(reverse = T)) 
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
