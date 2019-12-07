@@ -35,7 +35,7 @@ This repository contains the contributions in Tidituesday
 +--------------------------------+----------------+---------+---------------+
 |Student Loan Debt               |`2019-11-26`    |   48    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/26-11-19" target="_blank">File</a>    |
 +--------------------------------+----------------+---------+---------------+
-|                                |                |         |               |
+|Philly Parking Tickets          |`2019-12-03`    |   49    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/01-12-19" target="_blank">File</a>    |
 +--------------------------------+----------------+---------+---------------+
 |                                |                |         |               |
 +--------------------------------+----------------+---------+---------------+
