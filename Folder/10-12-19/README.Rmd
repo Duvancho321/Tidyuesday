@@ -1,0 +1,42 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = T,
+  echo = T,
+  warning = F,
+  error = F,
+  message = F,
+  comment = "#>"
+)
+```
+
+```{r setup}
+#Bibliotecas necesarias
+library(tidytuesdayR)
+library(tidyverse)
+library(ggsci)
+library(gganimate)
+library(ggthemes)
+library(ggmap)
+library(osmdata)
+library(ggpointdensity)
+
+```
+
+
+```{r data input}
+#Lectura de Datos
+#tt <- tt_load(2019,49) 
+#tt_dat <- tt$tickets 
+#save(tt_dat,file = "tickets.Rdata")
+#load("tickets.Rdata")
+```
+
+
+
+
