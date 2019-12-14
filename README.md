@@ -8,7 +8,9 @@
 <!-- badges: end -->
 
 This repository contains the contributions in
-\#Tidytuesday
+\#TidyTuesday
+
+<a href="https://github.com/rfordatascience/tidytuesday" target="_blank">TidyTuesday</a>
 
 ## Contributions
 
@@ -27,13 +29,13 @@ This repository contains the contributions in
 
 #### Week 50
 
+![](./Folder/10-12-19/README_files/figure-gfm/unnamed-chunk-3-1.gif)
+
 #### Week 49
 
 ![](./Folder/01-12-19/README_files/figure-gfm/unnamed-chunk-2-1.gif)
-![](./Folder/01-12-19/README_files/figure-gfm/unnamed-chunk-3-1.png)
-![](./Folder/01-12-19/README_files/figure-gfm/unnamed-chunk-3-2.png)
-![](./Folder/01-12-19/README_files/figure-gfm/unnamed-chunk-3-3.png)
 ![](./Folder/01-12-19/README_files/figure-gfm/unnamed-chunk-4-1.png)
+![](./Folder/01-12-19/README_files/figure-gfm/unnamed-chunk-3-3.png)
 
 #### Week 48
 
