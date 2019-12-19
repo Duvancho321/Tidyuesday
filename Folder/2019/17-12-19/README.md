@@ -1,0 +1,151 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+``` r
+#Bibliotecas necesarias
+library(tidytuesdayR)
+library(tidyverse)
+library(paletteer)
+library(maps)
+library(ggmap)
+library(ggthemes)
+library(ggsci)
+library(gganimate)
+library(forcats)
+```
+
+``` r
+#Lectura de Datos
+dog_moves <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-12-17/dog_moves.csv')
+dog_travel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-12-17/dog_travel.csv')
+dog_descriptions <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-12-17/dog_descriptions.csv')
+map <- get_map(location=c(left = -125, bottom = 25, right = -65, top = 50), zoom=5, source = "stamen", maptype="terrain",crop = T)
+save(dog_descriptions,file = "dog_descriptions.Rdata")
+save(dog_moves,file = "dog_moves.Rdata")
+save(dog_travel,file = "dog_travel.Rdata")
+save(map,file = "map.Rdata")
+```
+
+``` r
+# Load data
+load("dog_descriptions.Rdata")
+load("dog_moves.Rdata")
+load("dog_travel.Rdata")
+load("map.Rdata")
+```
+
+``` r
+us_state <- map_data("state")
+
+state_group <- tibble(abb = state.abb, region = state.name) %>% 
+  mutate(region = tolower(region))
+
+df_polygon <-  dog_descriptions %>% 
+  filter(contact_state %in% state.abb) %>% 
+  group_by(contact_state) %>% 
+  summarise(count= n()) %>% 
+  rename(abb = contact_state) %>% 
+  inner_join(state_group,by="abb") %>% 
+  full_join(us_state, by="region") %>% 
+  filter(!is.nan(long))
+
+top_state <- dog_descriptions %>% 
+  filter(contact_state %in% state.abb) %>% 
+  group_by(contact_state) %>% 
+  summarise(count = n()) %>% 
+  top_n(20)
+```
+
+``` r
+
+g <- ggmap(map) +
+  geom_polygon(data = df_polygon,aes(x=long, y=lat, group=group, fill=count), color= "grey30")+
+  scale_fill_viridis_c(option = "D",alpha = .5,direction = -1) +
+  theme_map() +
+  labs(title = "Dogs Rescued Per States",
+       fill = "Count",
+       caption = "Vizualization by @DuvanNievesRui1 | Data: 'Adoptable dogs' • Petfinder")+
+  theme(legend.background = element_rect(fill = "transparent"),
+        legend.position = c(.77,.15),
+        legend.direction = "horizontal",
+        legend.key.size = unit(2,'cm'),
+        plot.margin = unit(rep(.5,4),'cm'),
+        panel.background = element_rect(fill="grey10",color = "grey10"),
+        plot.background = element_rect(fill="grey10"),
+        plot.title = element_text(size=40, color="grey76"),
+        plot.caption = element_text(size = 20,color = "grey76", hjust = .98),
+        legend.text = element_text(family = "Roboto Mono",
+                                   size = 20,
+                                   colour = "grey10"),
+        legend.title = element_text(family = "Roboto Mono",
+                                   size = 24,
+                                   colour = "grey10")) +
+  transition_manual(frames = count,cumulative = T) +
+  shadow_mark()
+
+animate(g, renderer = gifski_renderer(),height = 1100, width =2200,fps = 10)
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-4-1.gif" style="display: block; margin: auto;" />
+
+``` r
+g <-   dog_descriptions %>% 
+  filter(contact_state %in% top_state$contact_state) %>% 
+  rename(state = contact_state) %>% 
+  group_by(age,state,sex) %>% 
+  summarise(count=n()) %>% 
+  filter(sex != "Unknown") %>% 
+  arrange(-count) %>% 
+  ggplot(.,aes(x=reorder(state,-count),y =count, fill=reorder(age,-count))) +
+  coord_flip() +
+  scale_fill_paletteer_d("ggpomological::pomological_palette") +
+  scale_y_continuous(labels = c("2000","1000","0","1000","2000"))+
+  geom_bar(data =. %>% filter(sex == "Male"), stat = "identity") +
+  geom_bar(data =. %>% filter(sex == "Female"), stat = "identity", aes(y=-count)) +
+  geom_hline(yintercept = 0)+
+  geom_label(aes(x=19.5,y=-1500,label="Female"),show.legend = F,fill="grey20",size=6, color="grey76")+
+  geom_label(aes(x=19.5,y=1500,label="Male"),show.legend = F,fill="grey20",size=6, color="grey76")+
+  labs(title = "Rescued Dogs",
+       subtitle = "Top 20 States ",
+       fill = "Age",
+       y = "Count",
+       x= "State",
+       caption = "Vizualization by @DuvanNievesRui1 | Data: 'Adoptable dogs' • Petfinder")+
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        axis.ticks.y = element_line(color = "grey76"),
+        legend.position = "top",
+        legend.background = element_rect(fill = "grey10"),
+        legend.key.size = unit(.5,"cm"),
+        panel.background = element_rect(fill="grey10",color = "grey10"),
+        plot.background = element_rect(fill="grey10"),
+        strip.background = element_rect(fil="grey20"),
+        panel.spacing = unit(2, "lines"),
+        plot.title = element_text(size=28, color="grey76",hjust = .5),
+        plot.subtitle  = element_text(size=20, color="grey76",hjust = .5),
+        plot.caption = element_text(size = 14,color = "grey76", hjust = .99),
+        axis.text = element_text(family = "Roboto Mono",
+                                 size = 10,
+                                 colour = "grey76"), 
+        strip.text.x =element_text(family = "Roboto Mono",
+                                   size = 14,
+                                   colour = "grey76"), 
+        axis.title =  element_text(family = "Roboto Mono",
+                                   size = 20,
+                                   colour = "white"),
+        legend.text = element_text(family = "Roboto Mono",
+                                   size = 10,
+                                   colour = "grey76"),
+        legend.title = element_text(family = "Roboto Mono",
+                                   size = 14,
+                                   colour = "grey76"),
+        line = element_line(linetype = "dotted")) + 
+  transition_layers(layer_length = .001,transition_length = 1) +
+  shadow_mark()+
+  enter_fade() + enter_grow() +
+  exit_fade() + exit_shrink()
+
+animate(g, renderer = gifski_renderer(),height = 500, width =1000,fps = 10)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.gif)<!-- -->
