@@ -1,0 +1,170 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = T,
+  echo = T,
+  warning = F,
+  error = F,
+  message = F,
+  comment = "#>"
+)
+```
+
+```{r setup}
+#Bibliotecas necesarias
+library(tidytuesdayR)
+library(tidyverse)
+library(ggimage)
+library(gganimate)
+library(ggwordcloud)
+library(png)
+library(grid)
+library(paletteer)
+```
+
+```{r data input,eval=FALSE}
+#Lectura de Datos
+tt <- tt_load(2019,52) 
+save(tt,file = "christmas.Rdata")
+```
+
+```{r}
+load("christmas.Rdata")
+tt$christmas_lyrics -> christmas_lyrics
+tt$christmas_songs -> christmas_songs
+g1 <- rasterGrob(readPNG('./copo.png', native = T), interpolate=F)
+g2 <- rasterGrob(readPNG('./ribbon.png',native = T), interpolate=F)
+```
+
+
+```{r,fig.width=15,fig.height=15, dpi= 600}
+g <- christmas_songs %>% 
+  ungroup() %>% 
+  group_by(song) %>% 
+  summarise(mwp = max(week_position), 
+            in_list = n()) %>% 
+  arrange(-in_list) %>% 
+  slice(1:20) %>% 
+  mutate(image = rep("./star.png",20) ) %>% 
+  ggplot(.,aes(x =reorder(song,in_list), y= in_list))+
+  labs(title = "Top 20 Most Popular Christmas Songs Ever",
+       subtitle = "Star : Max position obtained",
+       x= "Song",
+       y= "Times in list",
+       caption = "Vizualization by @DuvanNievesRui1 | Data: 'Christmas Songs' • Billboard Top 100")+
+  coord_flip()+
+  scale_y_continuous(limits = c(1,35),breaks = c(seq(1,36,2)))+
+  geom_image(aes(image=image),size=.07)+
+  geom_text(aes(label=mwp),nudge_y = .55,family = "Roboto Mono",size=2.8)+
+  theme(panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        axis.ticks.y = element_line(color = "grey76"),
+        legend.position = "top",
+        legend.background = element_rect(fill = "grey10"),
+        legend.key.size = unit(.5,"cm"),
+        panel.background = element_rect(fill="grey10",color = "grey10"),
+        plot.background = element_rect(fill="grey10"),
+        strip.background = element_rect(fil="grey20"),
+        panel.spacing = unit(2, "lines"),
+        plot.title = element_text(size=28, color="grey76",hjust = .5),
+        plot.subtitle  = element_text(size=20, color="grey76",hjust = .5),
+        plot.caption = element_text(size = 14,color = "grey76", hjust = .99),
+        axis.text = element_text(family = "Roboto Mono",
+                                 size = 10,
+                                 colour = "grey76"), 
+        strip.text.x =element_text(family = "Roboto Mono",
+                                   size = 14,
+                                   colour = "grey76"), 
+        axis.title =  element_text(family = "Roboto Mono",
+                                   size = 20,
+                                   colour = "white"),
+        legend.text = element_text(family = "Roboto Mono",
+                                   size = 10,
+                                   colour = "grey76"),
+        legend.title = element_text(family = "Roboto Mono",
+                                   size = 14,
+                                   colour = "grey76"),
+        line = element_line(linetype = "dotted")) +
+   annotation_custom(g2, xmin = 5, xmax = 33, ymin = 37, ymax = 32)+
+  annotation_custom(g1, xmin = 19, xmax = 20, ymin = 0.2, ymax = 2)+
+  annotation_custom(g1, xmin = 19.9, xmax = 20, ymin = 3.6, ymax = 5)+
+  annotation_custom(g1, xmin = 18.4, xmax = 20.2, ymin = 3.3, ymax = 5)+
+  annotation_custom(g1, xmin = 18.2, xmax = 20.6, ymin = 6.8, ymax = 9)+
+  annotation_custom(g1, xmin = 18.3, xmax = 20.8, ymin = 8.7, ymax = 11)+
+  annotation_custom(g1, xmin = 18.1, xmax = 19, ymin = 8.1, ymax = 10) + 
+  annotation_custom(g1, xmin = 14, xmax = 18, ymin = 0.2, ymax = 2)+
+  annotation_custom(g1, xmin = 15, xmax = 21, ymin = 0.1, ymax = 2)+
+  annotation_custom(g1, xmin = 15.9, xmax = 22, ymin = 3, ymax = 5)+
+  annotation_custom(g1, xmin = 15.9, xmax = 19, ymin = 3, ymax = 5)+
+  annotation_custom(g1, xmin = 15.3, xmax = 18.2, ymin = 3, ymax = 5)+
+  annotation_custom(g1, xmin = 15.7, xmax = 18.4, ymin = 5.1, ymax = 7)+
+  annotation_custom(g1, xmin = 15.2, xmax = 18.6, ymin = 7.4, ymax = 9)+
+  annotation_custom(g1, xmin = 15.3, xmax = 18.8, ymin = 9.2, ymax = 11)+
+  annotation_custom(g1, xmin = 15.1, xmax = 11, ymin = 8.1, ymax = 10)+
+  annotation_custom(g1, xmin = 14, xmax = 14, ymin = 0, ymax = 2)+
+  annotation_custom(g1, xmin = 11, xmax = 20, ymin = 0, ymax = 2)+
+  annotation_custom(g1, xmin = 11.9, xmax = 22, ymin = 3, ymax = 5)+
+  annotation_custom(g1, xmin = 11.3, xmax = 17.2, ymin = 4, ymax = 6)+
+  annotation_custom(g1, xmin = 11.7, xmax = 17.4, ymin = 5.2, ymax = 3)+
+  annotation_custom(g1, xmin = 11.2, xmax = 17.6, ymin = 7.4, ymax = 10)+
+  annotation_custom(g1, xmin = 11.3, xmax = 17.8, ymin = 9.1, ymax = 12)+
+  annotation_custom(g1, xmin = 11.1, xmax = 16, ymin = 8.7, ymax = 10)+
+  annotation_custom(g1, xmin = 15.1, xmax = 11, ymin = 8.1, ymax = 10)+
+  annotation_custom(g1, xmin = 5.2, xmax = 16.6, ymin = 5, ymax = 8)+
+  annotation_custom(g1, xmin = 5.3, xmax = 16.8, ymin = 7, ymax = 9)+
+  annotation_custom(g1, xmin = 5.1, xmax = 15, ymin = 1, ymax = 2)+
+  annotation_custom(g1, xmin = 9, xmax = 14.5, ymin = 0, ymax = 2)+
+  annotation_custom(g1, xmin = 5, xmax = 20.3, ymin = 0, ymax = 2)+
+  annotation_custom(g1, xmin = 5.9, xmax = 21.3, ymin = 3, ymax = 5)+
+  annotation_custom(g1, xmin = 5.9, xmax = 19.7, ymin = 3, ymax = 5)+
+  annotation_custom(g1, xmin = 5.7, xmax = 14.4, ymin = 5.2, ymax = 3)+
+  annotation_custom(g1, xmin = 5.2, xmax = 14.6, ymin = 5, ymax = 8)+
+  annotation_custom(g1, xmin = 5.3, xmax = 14.8, ymin = 7, ymax = 9)+
+  annotation_custom(g1, xmin = 5.1, xmax = 15, ymin = 1, ymax = 2)+
+  annotation_custom(g1, xmin = 5.7, xmax = 11.4, ymin = 5.2, ymax = 3)+
+  annotation_custom(g1, xmin = 5.2, xmax = 11.6, ymin = 5, ymax = 8)+
+  annotation_custom(g1, xmin = 5.1, xmax = 12, ymin = 1, ymax = 2)+
+  annotation_custom(g1, xmin = 5.7, xmax = 7.4, ymin = 5.2, ymax = 3)+
+  annotation_custom(g1, xmin = 5.2, xmax = 7.6, ymin = 4, ymax = 7)+
+  annotation_custom(g1, xmin = 5.3, xmax = 7.8, ymin = 6, ymax = 8)+
+  annotation_custom(g1, xmin = 5.1, xmax = 15, ymin = 1, ymax = 2)+
+  annotation_custom(g1, xmin = 5.2, xmax = 4.6, ymin = 2, ymax = 7)+
+  annotation_custom(g1, xmin = 5.3, xmax = 4.8, ymin = 8, ymax = 8)+
+  annotation_custom(g1, xmin = 5.1, xmax = 11, ymin = 1, ymax = 2)+
+  annotation_custom(g1, xmin = 0, xmax = 3, ymin = 0, ymax = 2)+
+  annotation_custom(g1, xmin = 2, xmax = 3, ymin = 4, ymax = 2)+
+  transition_layers()+
+  shadow_mark()+
+  enter_fade() + enter_grow() +
+  exit_fade() + exit_shrink()
+
+animate(g, renderer = gifski_renderer(),height = 500, width =1000,fps = 3)
+
+```
+
+```{r,fig.width=25,fig.height=20, dpi= 600}
+#11
+set.seed(30)
+ christmas_songs %>% 
+  ungroup() %>% 
+  group_by(song) %>% 
+  summarise(mwp = max(week_position), 
+            in_list = n()) %>% 
+  arrange(-in_list) %>%
+  mutate(angle = 45 * sample(-2:2, n(), replace = TRUE, prob = c(1, 1, 4, 1, 1))) %>% 
+  ggplot(.,aes(label=song,size=in_list, color=mwp, angle=angle)) +
+  geom_text_wordcloud_area(rm_outside = F)+
+  scale_size_area(readPNG('./tree.png'),max_size = 39) +
+  scale_color_paletteer_c("ggthemes::Classic Red-Green")+
+  labs(caption = "Vizualization by @DuvanNievesRui1 | Data: 'Christmas Songs' • Billboard Top 100")+
+  theme(panel.background = element_rect(fill="grey10",color = "grey10"),
+        plot.background = element_rect(fill="grey10"),
+        plot.caption = element_text(size = 14,color = "grey76", hjust = .99)) 
+
+```
+

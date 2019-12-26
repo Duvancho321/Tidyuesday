@@ -24,8 +24,18 @@ This repository contains the contributions in
 | Philly Parking Tickets | `2019-12-03` |  49  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/01-12-19" target="_blank">File</a> |
 | Replicating plots in R | `2019-12-10` |  50  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/10-12-19" target="_blank">File</a> |
 | Adoptable dogs         | `2019-12-17` |  51  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/17-12-19" target="_blank">File</a> |
+| Christmas Songs        | `2019-12-24` |  52  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/24-12-19" target="_blank">File</a> |
 |                        |              |      |                                                                                                  |
-|                        |              |      |                                                                                                  |
+
+<details>
+
+<summary>Week 52 📉
+</summary>
+
+![](./Folder/2019/24-12-19/README_files/figure-gfm/unnamed-chunk-3-1.gif)
+![](./Folder/2019/24-12-19/README_files/figure-gfm/unnamed-chunk-4-1.png)
+
+</details>
 
 <details>
 
