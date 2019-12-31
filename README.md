@@ -25,7 +25,13 @@ This repository contains the contributions in
 | Replicating plots in R | `2019-12-10` |  50  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/10-12-19" target="_blank">File</a> |
 | Adoptable dogs         | `2019-12-17` |  51  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/17-12-19" target="_blank">File</a> |
 | Christmas Songs        | `2019-12-24` |  52  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/24-12-19" target="_blank">File</a> |
-|                        |              |      |                                                                                                  |
+| Nobel Prize Winners    | `2019-12-24` |  53  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/31-12-19" target="_blank">File</a> |
+
+<details>
+
+<summary>Week 53 📉 </summary>
+
+</details>
 
 <details>
 
