@@ -42,11 +42,13 @@ This repository contains the contributions in #TidyTuesday
 +--------------------------------+----------------+---------+---------------+
 |Christmas Songs                 |`2019-12-24`    |   52    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/24-12-19" target="_blank">File</a>    |
 +--------------------------------+----------------+---------+---------------+
-|Nobel Prize Winners             |`2019-12-31`    |   53    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/31-12-19" target="_blank">File</a>    |
+|Bike & Walk Commutes            |`2019-12-31`    |   53    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/31-12-19" target="_blank">File</a>    |
 +--------------------------------+----------------+---------+---------------+
 
 <details><summary>Week 53 📉 </summary> 
 
+![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-4-1.gif)
+![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-5-1.gif)
 
 </details>
 
