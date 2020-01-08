@@ -1,0 +1,28 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = T,
+  echo = T,
+  warning = F,
+  error = F,
+  message = F,
+  comment = "#>"
+)
+```
+
+
+```{r setup}
+library(tidytuesdayR)
+library(tidyverse)
+```
+
+```{r, eval=FALSE}
+tt <- tt_load(2020,1) 
+tt_dat <- tt$
+```
+
