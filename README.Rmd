@@ -23,77 +23,6 @@ This repository contains the contributions in #TidyTuesday
 
 ## Contributions
 
-<details><summary>2019 </summary> 
-
-### `2019`  
-
-+--------------------------------+----------------+---------+---------------+
-| Theme                          | Date           |  Week   | Code          |
-+================================+:==============:+:=======:+:=============:+
-|CRAN Code                       |`2019-11-12`    |   46    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/12-11-19" target="_blank">File</a> |
-+--------------------------------+----------------+---------+---------------+
-|NZ Bird of the Year             |`2019-11-19`    |   47    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/19-11-19" target="_blank">File</a> |
-+--------------------------------+----------------+---------+---------------+
-|Student Loan Debt               |`2019-11-26`    |   48    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/26-11-19" target="_blank">File</a> |
-+--------------------------------+----------------+---------+---------------+
-|Philly Parking Tickets          |`2019-12-03`    |   49    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/01-12-19" target="_blank">File</a> |
-+--------------------------------+----------------+---------+---------------+
-|Replicating plots in R          |`2019-12-10`    |   50    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/10-12-19" target="_blank">File</a> |
-+--------------------------------+----------------+---------+---------------+
-|Adoptable dogs                  |`2019-12-17`    |   51    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/17-12-19" target="_blank">File</a> |
-+--------------------------------+----------------+---------+---------------+
-|Christmas Songs                 |`2019-12-24`    |   52    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/24-12-19" target="_blank">File</a> |
-+--------------------------------+----------------+---------+---------------+
-
-<details><summary>Week 52 📉 </summary> 
-
-![](./Folder/2019/24-12-19/README_files/figure-gfm/unnamed-chunk-3-1.gif)
-
-![](./Folder/2019/24-12-19/README_files/figure-gfm/unnamed-chunk-4-1.png)
-
-</details>
-<details><summary>Week 51 📉 </summary> 
-
-![](./Folder/2019/17-12-19/README_files/figure-gfm/unnamed-chunk-4-1.gif)
-
-![](./Folder/2019/17-12-19/README_files/figure-gfm/unnamed-chunk-5-1.gif)
-</details>
-<details><summary>Week 50 📉 </summary>
-
-![](./Folder/2019/10-12-19/README_files/figure-gfm/unnamed-chunk-3-1.gif)
-
-</details>
-<details><summary>Week 49 📉 </summary> 
-
-![](./Folder/2019/01-12-19/README_files/figure-gfm/unnamed-chunk-2-1.gif)
-
-![](./Folder/2019/01-12-19/README_files/figure-gfm/unnamed-chunk-4-1.png)
-
-![](./Folder/2019/01-12-19/README_files/figure-gfm/unnamed-chunk-3-3.png)
-</details>
-<details><summary>Week 48 📉 </summary> 
-
-![](./Folder/2019/26-11-19/README_files/figure-gfm/unnamed-chunk-4-1.png)
-
-![](./Folder/2019/26-11-19/README_files/figure-gfm/unnamed-chunk-5-1.png)
-
-![](./Folder/2019/26-11-19/README_files/figure-gfm/unnamed-chunk-6-1.png)
-
-</details>
-<details><summary>Week 47 📉 </summary> 
-
-![](./Folder/2019/19-11-19/README_files/figure-gfm/unnamed-chunk-2-1.gif)
-
-</details>
-<details><summary>Week 46 📉 </summary> 
-
-![](./Folder/2019/12-11-19/README_files/figure-gfm/unnamed-chunk-2-1.gif)
-
-</details>
-
-</details>
-
-
 ### `2020`
 
 +--------------------------------+----------------+---------+---------------+
@@ -101,7 +30,7 @@ This repository contains the contributions in #TidyTuesday
 +================================+:==============:+:=======:+:=============:+
 |Bike & Walk Commutes            |`2019-12-31`    |    1    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/31-12-19" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
-|                                |`2020-01-07`    |    2    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-07" target="_blank">File</a> |
+|Australian Fires                |`2020-01-07`    |    2    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-07" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
 |                                |`2020-01-14`    |    3    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-14" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
@@ -210,3 +139,82 @@ This repository contains the contributions in #TidyTuesday
 
 ![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-5-1.gif)
 </details>
+
+<details><summary>Week 2 📉 </summary> 
+
+![](./Folder/2020/2020-01-07/README_files/figure-gfm/unnamed-chunk-3-1.gif)
+
+![](./Folder/2020/2020-01-07/README_files/figure-gfm/unnamed-chunk-4-1.gif)
+
+</details>
+
+<details><summary>2019 </summary> 
+
+### `2019`  
+
++--------------------------------+----------------+---------+---------------+
+| Theme                          | Date           |  Week   | Code          |
++================================+:==============:+:=======:+:=============:+
+|CRAN Code                       |`2019-11-12`    |   46    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/12-11-19" target="_blank">File</a> |
++--------------------------------+----------------+---------+---------------+
+|NZ Bird of the Year             |`2019-11-19`    |   47    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/19-11-19" target="_blank">File</a> |
++--------------------------------+----------------+---------+---------------+
+|Student Loan Debt               |`2019-11-26`    |   48    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/26-11-19" target="_blank">File</a> |
++--------------------------------+----------------+---------+---------------+
+|Philly Parking Tickets          |`2019-12-03`    |   49    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/01-12-19" target="_blank">File</a> |
++--------------------------------+----------------+---------+---------------+
+|Replicating plots in R          |`2019-12-10`    |   50    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/10-12-19" target="_blank">File</a> |
++--------------------------------+----------------+---------+---------------+
+|Adoptable dogs                  |`2019-12-17`    |   51    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/17-12-19" target="_blank">File</a> |
++--------------------------------+----------------+---------+---------------+
+|Christmas Songs                 |`2019-12-24`    |   52    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/24-12-19" target="_blank">File</a> |
++--------------------------------+----------------+---------+---------------+
+
+<details><summary>Week 52 📉 </summary> 
+
+![](./Folder/2019/24-12-19/README_files/figure-gfm/unnamed-chunk-3-1.gif)
+
+![](./Folder/2019/24-12-19/README_files/figure-gfm/unnamed-chunk-4-1.png)
+
+</details>
+<details><summary>Week 51 📉 </summary> 
+
+![](./Folder/2019/17-12-19/README_files/figure-gfm/unnamed-chunk-4-1.gif)
+
+![](./Folder/2019/17-12-19/README_files/figure-gfm/unnamed-chunk-5-1.gif)
+</details>
+<details><summary>Week 50 📉 </summary>
+
+![](./Folder/2019/10-12-19/README_files/figure-gfm/unnamed-chunk-3-1.gif)
+
+</details>
+<details><summary>Week 49 📉 </summary> 
+
+![](./Folder/2019/01-12-19/README_files/figure-gfm/unnamed-chunk-2-1.gif)
+
+![](./Folder/2019/01-12-19/README_files/figure-gfm/unnamed-chunk-4-1.png)
+
+![](./Folder/2019/01-12-19/README_files/figure-gfm/unnamed-chunk-3-3.png)
+</details>
+<details><summary>Week 48 📉 </summary> 
+
+![](./Folder/2019/26-11-19/README_files/figure-gfm/unnamed-chunk-4-1.png)
+
+![](./Folder/2019/26-11-19/README_files/figure-gfm/unnamed-chunk-5-1.png)
+
+![](./Folder/2019/26-11-19/README_files/figure-gfm/unnamed-chunk-6-1.png)
+
+</details>
+<details><summary>Week 47 📉 </summary> 
+
+![](./Folder/2019/19-11-19/README_files/figure-gfm/unnamed-chunk-2-1.gif)
+
+</details>
+<details><summary>Week 46 📉 </summary> 
+
+![](./Folder/2019/12-11-19/README_files/figure-gfm/unnamed-chunk-2-1.gif)
+
+</details>
+
+</details>
+
