@@ -20,7 +20,7 @@ This repository contains the contributions in
 | -------------------- | :----------: | :--: | :------------------------------------------------------------------------------------------------: |
 | Bike & Walk Commutes | `2019-12-31` |  1   |  <a href="https://duvancho321.github.io/Tidyuesday/Folder/2019/31-12-19" target="_blank">File</a>  |
 | Australian Fires     | `2020-01-07` |  2   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-07" target="_blank">File</a> |
-|                      | `2020-01-14` |  3   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-14" target="_blank">File</a> |
+| Passwords            | `2020-01-14` |  3   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-14" target="_blank">File</a> |
 |                      | `2020-01-21` |  4   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-21" target="_blank">File</a> |
 |                      | `2020-01-28` |  5   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-28" target="_blank">File</a> |
 |                      | `2020-02-04` |  6   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-02-04" target="_blank">File</a> |
@@ -73,12 +73,10 @@ This repository contains the contributions in
 
 <details>
 
-<summary>Week 1 📉
+<summary>Week 3 📉
 </summary>
 
-![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-4-1.gif)
-
-![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-5-1.gif)
+![](./Folder/2020/2020-01-14/README_files/figure-gfm/unnamed-chunk-3-1.gif)
 
 </details>
 
@@ -90,6 +88,17 @@ This repository contains the contributions in
 ![](./Folder/2020/2020-01-07/README_files/figure-gfm/unnamed-chunk-3-1.gif)
 
 ![](./Folder/2020/2020-01-07/README_files/figure-gfm/unnamed-chunk-4-1.gif)
+
+</details>
+
+<details>
+
+<summary>Week 1 📉
+</summary>
+
+![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-4-1.gif)
+
+![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-5-1.gif)
 
 </details>
 

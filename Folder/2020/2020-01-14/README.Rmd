@@ -19,10 +19,84 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(tidytuesdayR)
 library(tidyverse)
+library(ggsci)
+library(gganimate)
 ```
 
 ```{r, eval=FALSE}
-tt <- tt_load(2020,1) 
-tt_dat <- tt$
+passwords <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-14/passwords.csv')
+save(passwords, file='passwords.Rdata')
+```
+
+
+```{r, fig.width=18,fig.height=14}
+load("passwords.Rdata")
+
+g <-   passwords%>% 
+  filter(!is.na(rank)) %>% 
+  select(-c(value,time_unit)) %>% 
+  group_by(category) %>% 
+  mutate(mean_strength=mean(strength)) %>% 
+  ggplot(.,aes(x=fct_reorder(category,mean_strength), y= strength, color =fct_reorder(category,mean_strength))) +
+  geom_jitter(width = 0.35, height = 0,size=4, alpha=.3) +
+  geom_hline(aes(yintercept= mean(strength)), color="grey30",size=2)+
+  stat_summary(fun.y = "mean", geom = "point",shape = 19, size=10, alpha =.75) +
+  stat_summary(fun.y = "mean", geom = "errorbar", width=0.7,lwd=1 ,fun.ymin = function(x) mean(x) - sd(x),fun.ymax = function(x) mean(x) + sd(x),
+               #position = position_nudge(x = .18, y = 0),
+               linetype = "twodash") +
+  geom_label(aes(x=5.5,y=15,label=paste("Mean Strength\n7.43")),show.legend = F,fill="grey20",size=6, color="grey76")+
+  geom_curve(aes(x=5,y=15.3,xend=3.5, yend=mean(strength)),
+             curvature = -.5,
+             arrow = arrow(length = unit(0.01, "npc")),
+             color="grey70")+
+  geom_label(aes(x=7.5,y=20,label=paste("Average by\nGroup")),show.legend = F,fill="grey20",size=6, color="grey76")+
+  geom_curve(aes(x=7.5,y=17.45,xend=7.9, yend=8),
+             curvature = -.3,
+             arrow = arrow(length = unit(0.01, "npc")),
+             color="grey70")+
+  geom_label(aes(x=9.5,y=35,label=paste("Error bar")),show.legend = F,fill="grey20",size=6, color="grey76")+
+  geom_curve(aes(x=9.5,y=32.82,xend=9.6, yend=27.51),
+             curvature = -.3,
+             arrow = arrow(length = unit(0.01, "npc")),
+             color="grey70")+
+  scale_color_jco()+
+  scale_y_continuous(breaks = seq(-5,51,3))+
+  coord_flip()+
+  labs(title = "Password Category Vs Strength",
+       y="Strength",
+       x="Category",
+       caption= "Vizualization by @DuvanNievesRui1 | Data: 'Passwords' • Knowledge is Beautiful")+
+  theme(legend.position = "none",
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        line = element_line(linetype = "dotted"),
+        #axis.ticks.y = element_line(),
+        panel.background = element_rect(fill="grey10",color = "grey10"),
+        plot.background = element_rect(fill="grey10"),
+        plot.title = element_text(size=40, color="grey76",hjust = .5),
+        plot.subtitle  = element_text(size=26, color="grey76"),
+        plot.caption = element_text(size = 14,color = "grey76", hjust = .98),
+        axis.text = element_text(family = "Roboto Mono",
+                                 size = 20,
+                                 colour = "grey76"), 
+        strip.text.x =element_text(family = "Roboto Mono",
+                                   size = 14,
+                                   colour = "grey76"), 
+        axis.title =  element_text(family = "Roboto Mono",
+                                   size = 30,
+                                   colour = "white"),
+        legend.text = element_text(family = "Roboto Mono",
+                                   size = 12,
+                                   colour = "grey76"),
+        legend.title = element_text(family = "Roboto Mono",
+                                   size = 16,
+                                   colour = "grey76"))+
+  transition_layers(layer_length = .001,transition_length = 1) +
+  shadow_mark()+
+  enter_fade() + enter_grow() +
+  exit_fade() + exit_shrink()
+
+animate(g, renderer = gifski_renderer(),height = 700, width =1350,fps = 10)
+
 ```
 

@@ -32,7 +32,7 @@ This repository contains the contributions in #TidyTuesday
 +--------------------------------+----------------+---------+---------------+
 |Australian Fires                |`2020-01-07`    |    2    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-07" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
-|                                |`2020-01-14`    |    3    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-14" target="_blank">File</a> |
+|Passwords                       |`2020-01-14`    |    3    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-14" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
 |                                |`2020-01-21`    |    4    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-21" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
@@ -133,12 +133,12 @@ This repository contains the contributions in #TidyTuesday
 |                                |`2020-12-22`    |    52   |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-12-22" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
 
-<details><summary>Week 1 📉 </summary> 
+<details><summary>Week 3 📉 </summary> 
 
-![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-4-1.gif)
+![](./Folder/2020/2020-01-14/README_files/figure-gfm/unnamed-chunk-3-1.gif)
 
-![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-5-1.gif)
 </details>
+
 
 <details><summary>Week 2 📉 </summary> 
 
@@ -147,7 +147,13 @@ This repository contains the contributions in #TidyTuesday
 ![](./Folder/2020/2020-01-07/README_files/figure-gfm/unnamed-chunk-4-1.gif)
 
 </details>
+<details><summary>Week 1 📉 </summary> 
 
+![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-4-1.gif)
+
+![](./Folder/2019/31-12-19/README_files/figure-gfm/unnamed-chunk-5-1.gif)
+
+</details>
 <details><summary>2019 </summary> 
 
 ### `2019`  
