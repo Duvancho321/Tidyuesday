@@ -36,7 +36,7 @@ This repository contains the contributions in #TidyTuesday
 +--------------------------------+----------------+---------+---------------+
 |Song Genres                     |`2020-01-21`    |    4    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-21" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
-|                                |`2020-01-28`    |    5    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-28" target="_blank">File</a> |
+|San Francisco Trees             |`2020-01-28`    |    5    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-28" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
 |                                |`2020-02-04`    |    6    |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-02-04" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
@@ -132,6 +132,15 @@ This repository contains the contributions in #TidyTuesday
 +--------------------------------+----------------+---------+---------------+
 |                                |`2020-12-22`    |    52   |<a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-12-22" target="_blank">File</a> |
 +--------------------------------+----------------+---------+---------------+
+
+
+<details><summary>Week 5 📉 </summary> 
+
+![](./Folder/2020/2020-01-28/README_files/figure-gfm/unnamed-chunk-4-1.png)
+![](./Folder/2020/2020-01-28/README_files/figure-gfm/unnamed-chunk-5-1.gif)
+
+</details>
+
 
 <details><summary>Week 4 📉 </summary> 
 
