@@ -73,7 +73,7 @@ This repository contains the contributions in
 
 <details>
 
-<summary>Week 6 📉
+<summary>Week 7 📉
 </summary>
 
 ![](./Folder/2020/2020-02-11/README_files/figure-gfm/unnamed-chunk-4-1.png)
@@ -83,7 +83,7 @@ This repository contains the contributions in
 
 <details>
 
-<summary>Week 5 📉
+<summary>Week 6 📉
 </summary>
 
 ![](./Folder/2020/2020-02-04/README_files/figure-gfm/unnamed-chunk-3-1.png)
