@@ -23,8 +23,8 @@ This repository contains the contributions in
 | Passwords            | `2020-01-14` |  3   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-14" target="_blank">File</a> |
 | Song Genres          | `2020-01-21` |  4   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-21" target="_blank">File</a> |
 | San Francisco Trees  | `2020-01-28` |  5   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-01-28" target="_blank">File</a> |
-|                      | `2020-02-04` |  6   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-02-04" target="_blank">File</a> |
-|                      | `2020-02-11` |  7   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-02-11" target="_blank">File</a> |
+| NFL Attendance       | `2020-02-04` |  6   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-02-04" target="_blank">File</a> |
+| Hotel Bookings       | `2020-02-11` |  7   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-02-11" target="_blank">File</a> |
 |                      | `2020-02-18` |  8   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-02-18" target="_blank">File</a> |
 |                      | `2020-02-25` |  9   | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-02-25" target="_blank">File</a> |
 |                      | `2020-03-03` |  10  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-03-03" target="_blank">File</a> |
@@ -70,6 +70,26 @@ This repository contains the contributions in
 |                      | `2020-12-08` |  50  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-12-08" target="_blank">File</a> |
 |                      | `2020-12-15` |  51  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-12-15" target="_blank">File</a> |
 |                      | `2020-12-22` |  52  | <a href="https://duvancho321.github.io/Tidyuesday/Folder/2020/2020-12-22" target="_blank">File</a> |
+
+<details>
+
+<summary>Week 6 📉
+</summary>
+
+![](./Folder/2020/2020-02-11/README_files/figure-gfm/unnamed-chunk-4-1.png)
+![](./Folder/2020/2020-02-11/README_files/figure-gfm/unnamed-chunk-5-1.png)
+
+</details>
+
+<details>
+
+<summary>Week 5 📉
+</summary>
+
+![](./Folder/2020/2020-02-04/README_files/figure-gfm/unnamed-chunk-3-1.png)
+![](./Folder/2020/2020-02-04/README_files/figure-gfm/unnamed-chunk-4-1.gif)
+
+</details>
 
 <details>
 
